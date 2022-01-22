@@ -37,7 +37,7 @@ enum SplitDetailState: Equatable {
     case separated
 }
 
-struct MainState: StateType, Equatable {
+struct MainState: Equatable {
     var genres: [Genre] = []
     var moviePages: Pages<Movie> = .init()
 
