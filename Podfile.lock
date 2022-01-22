@@ -16,7 +16,7 @@ DEPENDENCIES:
   - CombineCocoa
   - CombineKeyboard
   - DifferenceKit/UIKitExtension
-  - Nuke (~> 7.4)
+  - Nuke
   - ReSwift
   - ReSwiftThunk
 
@@ -37,6 +37,6 @@ SPEC CHECKSUMS:
   ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
   ReSwiftThunk: 23c8ea9092d9dc94b72005f19352dbd37fa42533
 
-PODFILE CHECKSUM: d428ba64c90b22bd6b18ca1ba07db4d4b5dbe336
+PODFILE CHECKSUM: e2df762a1a9976848e77daadd06968c9af4336a8
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.11.2

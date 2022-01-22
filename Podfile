@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '15'
 
 target 'ReduxMovieDB' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -15,7 +15,7 @@ target 'ReduxMovieDB' do
   pod 'CombineKeyboard'
 
   # Networking pods
-  pod 'Nuke', '~> 7.4'
+  pod 'Nuke'
 
   # Diffing pods
   pod 'DifferenceKit/UIKitExtension'

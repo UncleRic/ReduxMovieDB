@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1B32A3FE2723373200D2DA53 /* Combine+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B32A3FD2723373200D2DA53 /* Combine+Extensions.swift */; };
-		2BB56F98FD90D772FD4F4C63 /* Pods_ReduxMovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE35D096699EA77E6EA5F571 /* Pods_ReduxMovieDB.framework */; };
 		800E401F217FA5E300C2A3BD /* Movie+Differentiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800E401E217FA5E300C2A3BD /* Movie+Differentiable.swift */; };
 		802CD6A221D6A8D2000FF852 /* MovieDetailViewStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802CD6A121D6A8D2000FF852 /* MovieDetailViewStateTests.swift */; };
 		805B438C2198971A004A7C28 /* UITableView+DiffUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805B438B21989719004A7C28 /* UITableView+DiffUpdate.swift */; };
@@ -31,8 +30,9 @@
 		80673CCA20323AA70091B48F /* Pages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80673CC920323AA70091B48F /* Pages.swift */; };
 		8076FB13208B6BFF00513FAC /* MainStateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076FB12208B6BFF00513FAC /* MainStateAction.swift */; };
 		80BFF62021D4911A00D99771 /* MovieListViewStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BFF61F21D4911A00D99771 /* MovieListViewStateTests.swift */; };
-		8F78D29FD15515E0A0DB290B /* Pods_ReduxMovieDBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95329AAEB8BDA5A98456AF4B /* Pods_ReduxMovieDBTests.framework */; };
 		94CDE0A723438A6A00545FF1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 94CDE0A923438A6A00545FF1 /* Localizable.strings */; };
+		A08EADDA1CB93AA6CD1CB40C /* Pods_ReduxMovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F946B548F5697E2ABA69CEF /* Pods_ReduxMovieDB.framework */; };
+		F3A4EA2BF8306DDCBEC0F1A5 /* Pods_ReduxMovieDBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 010B67330B38F8EEBA53CC77 /* Pods_ReduxMovieDBTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		13E98F29840EB3FF1CDF29CA /* Pods-ReduxMovieDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxMovieDB.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxMovieDB/Pods-ReduxMovieDB.release.xcconfig"; sourceTree = "<group>"; };
+		010B67330B38F8EEBA53CC77 /* Pods_ReduxMovieDBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxMovieDBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		123A61542F429FF91BD6A34D /* Pods-ReduxMovieDBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxMovieDBTests.debug.xcconfig"; path = "Target Support Files/Pods-ReduxMovieDBTests/Pods-ReduxMovieDBTests.debug.xcconfig"; sourceTree = "<group>"; };
+		18DA01A408C5B3450ADFE647 /* Pods-ReduxMovieDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxMovieDB.release.xcconfig"; path = "Target Support Files/Pods-ReduxMovieDB/Pods-ReduxMovieDB.release.xcconfig"; sourceTree = "<group>"; };
 		1B32A3FD2723373200D2DA53 /* Combine+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Extensions.swift"; sourceTree = "<group>"; };
-		30F9E0D8CDC279D30EA5ACC7 /* Pods-ReduxMovieDBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxMovieDBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxMovieDBTests/Pods-ReduxMovieDBTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E5DFD76284E1C0662B314D7 /* Pods-ReduxMovieDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxMovieDB.debug.xcconfig"; path = "Target Support Files/Pods-ReduxMovieDB/Pods-ReduxMovieDB.debug.xcconfig"; sourceTree = "<group>"; };
+		4F946B548F5697E2ABA69CEF /* Pods_ReduxMovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxMovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		800E401E217FA5E300C2A3BD /* Movie+Differentiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Differentiable.swift"; sourceTree = "<group>"; };
 		802CD6A121D6A8D2000FF852 /* MovieDetailViewStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewStateTests.swift; sourceTree = "<group>"; };
 		805B438B21989719004A7C28 /* UITableView+DiffUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+DiffUpdate.swift"; sourceTree = "<group>"; };
@@ -77,10 +80,7 @@
 		80BFF61F21D4911A00D99771 /* MovieListViewStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewStateTests.swift; sourceTree = "<group>"; };
 		94CDE0A823438A6A00545FF1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		94CDE0AA23438AD700545FF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		95329AAEB8BDA5A98456AF4B /* Pods_ReduxMovieDBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxMovieDBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6F0F62F1051E868DD2A7A1C /* Pods-ReduxMovieDBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxMovieDBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxMovieDBTests/Pods-ReduxMovieDBTests.release.xcconfig"; sourceTree = "<group>"; };
-		EB8B1F69E8325CD6968C206D /* Pods-ReduxMovieDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxMovieDB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReduxMovieDB/Pods-ReduxMovieDB.debug.xcconfig"; sourceTree = "<group>"; };
-		FE35D096699EA77E6EA5F571 /* Pods_ReduxMovieDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReduxMovieDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D052C0DBFEFE111850B8C711 /* Pods-ReduxMovieDBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReduxMovieDBTests.release.xcconfig"; path = "Target Support Files/Pods-ReduxMovieDBTests/Pods-ReduxMovieDBTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BB56F98FD90D772FD4F4C63 /* Pods_ReduxMovieDB.framework in Frameworks */,
+				A08EADDA1CB93AA6CD1CB40C /* Pods_ReduxMovieDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,21 +96,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F78D29FD15515E0A0DB290B /* Pods_ReduxMovieDBTests.framework in Frameworks */,
+				F3A4EA2BF8306DDCBEC0F1A5 /* Pods_ReduxMovieDBTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E8F66DD322436AE7C8D5A87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F946B548F5697E2ABA69CEF /* Pods_ReduxMovieDB.framework */,
+				010B67330B38F8EEBA53CC77 /* Pods_ReduxMovieDBTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB426F8A988491B5F9902C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E5DFD76284E1C0662B314D7 /* Pods-ReduxMovieDB.debug.xcconfig */,
+				18DA01A408C5B3450ADFE647 /* Pods-ReduxMovieDB.release.xcconfig */,
+				123A61542F429FF91BD6A34D /* Pods-ReduxMovieDBTests.debug.xcconfig */,
+				D052C0DBFEFE111850B8C711 /* Pods-ReduxMovieDBTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		80673C802030C3DA0091B48F = {
 			isa = PBXGroup;
 			children = (
 				80673C8B2030C3DA0091B48F /* ReduxMovieDB */,
 				80673CA02030C3DA0091B48F /* ReduxMovieDBTests */,
 				80673C8A2030C3DA0091B48F /* Products */,
-				D4C24798534322BDDE0E79FC /* Pods */,
-				8D98CBDEDF94752D402B757F /* Frameworks */,
+				7DB426F8A988491B5F9902C0 /* Pods */,
+				6E8F66DD322436AE7C8D5A87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,26 +256,6 @@
 			path = ViewState;
 			sourceTree = "<group>";
 		};
-		8D98CBDEDF94752D402B757F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FE35D096699EA77E6EA5F571 /* Pods_ReduxMovieDB.framework */,
-				95329AAEB8BDA5A98456AF4B /* Pods_ReduxMovieDBTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D4C24798534322BDDE0E79FC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EB8B1F69E8325CD6968C206D /* Pods-ReduxMovieDB.debug.xcconfig */,
-				13E98F29840EB3FF1CDF29CA /* Pods-ReduxMovieDB.release.xcconfig */,
-				30F9E0D8CDC279D30EA5ACC7 /* Pods-ReduxMovieDBTests.debug.xcconfig */,
-				E6F0F62F1051E868DD2A7A1C /* Pods-ReduxMovieDBTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,11 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80673CA62030C3DA0091B48F /* Build configuration list for PBXNativeTarget "ReduxMovieDB" */;
 			buildPhases = (
-				3BFB14A496D0707B5C2F6760 /* [CP] Check Pods Manifest.lock */,
+				BEC61AEBE435FB789D699FC3 /* [CP] Check Pods Manifest.lock */,
 				80673C852030C3DA0091B48F /* Sources */,
 				80673C862030C3DA0091B48F /* Frameworks */,
 				80673C872030C3DA0091B48F /* Resources */,
-				1E3E8EAFA5E6C1EC0966DAD2 /* [CP] Embed Pods Frameworks */,
+				31950364CE6F5EC1F9877BE4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,7 +282,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80673CA92030C3DA0091B48F /* Build configuration list for PBXNativeTarget "ReduxMovieDBTests" */;
 			buildPhases = (
-				491353CC5395D2E9540391A5 /* [CP] Check Pods Manifest.lock */,
+				AEB0992A38DAB2A875A50DA8 /* [CP] Check Pods Manifest.lock */,
 				80673C992030C3DA0091B48F /* Sources */,
 				80673C9A2030C3DA0091B48F /* Frameworks */,
 				80673C9B2030C3DA0091B48F /* Resources */,
@@ -361,7 +362,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E3E8EAFA5E6C1EC0966DAD2 /* [CP] Embed Pods Frameworks */ = {
+		31950364CE6F5EC1F9877BE4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -389,36 +390,44 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ReduxMovieDB/Pods-ReduxMovieDB-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3BFB14A496D0707B5C2F6760 /* [CP] Check Pods Manifest.lock */ = {
+		AEB0992A38DAB2A875A50DA8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ReduxMovieDB-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ReduxMovieDBTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		491353CC5395D2E9540391A5 /* [CP] Check Pods Manifest.lock */ = {
+		BEC61AEBE435FB789D699FC3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ReduxMovieDBTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-ReduxMovieDB-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -620,7 +629,7 @@
 		};
 		80673CA72030C3DA0091B48F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB8B1F69E8325CD6968C206D /* Pods-ReduxMovieDB.debug.xcconfig */;
+			baseConfigurationReference = 1E5DFD76284E1C0662B314D7 /* Pods-ReduxMovieDB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -636,7 +645,7 @@
 		};
 		80673CA82030C3DA0091B48F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13E98F29840EB3FF1CDF29CA /* Pods-ReduxMovieDB.release.xcconfig */;
+			baseConfigurationReference = 18DA01A408C5B3450ADFE647 /* Pods-ReduxMovieDB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -652,7 +661,7 @@
 		};
 		80673CAA2030C3DA0091B48F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30F9E0D8CDC279D30EA5ACC7 /* Pods-ReduxMovieDBTests.debug.xcconfig */;
+			baseConfigurationReference = 123A61542F429FF91BD6A34D /* Pods-ReduxMovieDBTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -670,7 +679,7 @@
 		};
 		80673CAB2030C3DA0091B48F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6F0F62F1051E868DD2A7A1C /* Pods-ReduxMovieDBTests.release.xcconfig */;
+			baseConfigurationReference = D052C0DBFEFE111850B8C711 /* Pods-ReduxMovieDBTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
