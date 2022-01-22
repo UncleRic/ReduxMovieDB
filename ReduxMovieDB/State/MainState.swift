@@ -22,11 +22,11 @@ enum MovieDetailState: Equatable {
 
     var movie: Movie? {
         switch self {
-        case .willHide(let movie):
+        case let .willHide(movie):
             return movie
         case .hide:
             return nil
-        case .show(let movie):
+        case let .show(movie):
             return movie
         }
     }
@@ -39,7 +39,7 @@ enum SplitDetailState: Equatable {
 
 struct MainState: StateType, Equatable {
     var genres: [Genre] = []
-    var moviePages: Pages<Movie> = Pages<Movie>()
+    var moviePages: Pages<Movie> = .init()
 
     var movieDetail: MovieDetailState = .hide
     var splitDetail: SplitDetailState = .separated
@@ -47,9 +47,9 @@ struct MainState: StateType, Equatable {
     var search: SearchState = .canceled
 
     var movies: [Movie] {
-        return moviePages.values
+        moviePages.values
     }
-    
+
     var canDispatchSearchActions: Bool {
         switch (splitDetail, movieDetail) {
         case (.separated, _),
@@ -69,20 +69,19 @@ func mainReducer(action: Action, state: MainState?) -> MainState {
     }
 
     switch action {
-    case .addGenres(let genres):
+    case let .addGenres(genres):
         state.genres.append(contentsOf: genres)
 
-    case .fetchNextMoviesPage(let totalPages, let movies):
+    case let .fetchNextMoviesPage(totalPages, movies):
         // TMDB API is returning duplicates...
-        let values = movies.filter({ movie in !state.movies.contains(where: { $0.id == movie.id }) })
+        let values = movies.filter { movie in !state.movies.contains(where: { $0.id == movie.id }) }
         state.moviePages.addPage(totalPages: totalPages, values: values)
 
-
-    case .willHideMovieDetail(let movie):
+    case let .willHideMovieDetail(movie):
         state.movieDetail = .willHide(movie)
     case .hideMovieDetail:
         state.movieDetail = .hide
-    case .showMovieDetail(let movie):
+    case let .showMovieDetail(movie):
         state.movieDetail = .show(movie)
 
     case .cancelSearch:
@@ -91,7 +90,7 @@ func mainReducer(action: Action, state: MainState?) -> MainState {
     case .readySearch:
         state.moviePages = Pages<Movie>()
         state.search = .ready
-    case .search(let query):
+    case let .search(query):
         state.moviePages = Pages<Movie>()
         state.search = .searching(query)
     case .collapseSplitDetail:

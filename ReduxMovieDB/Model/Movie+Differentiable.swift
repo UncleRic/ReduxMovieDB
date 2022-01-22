@@ -12,6 +12,6 @@ extension Movie: Differentiable {
     typealias DifferenceIdentifier = Int?
 
     var differenceIdentifier: Int? {
-        return id
+        id
     }
 }

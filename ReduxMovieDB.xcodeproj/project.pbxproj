@@ -105,20 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7DB426F8A988491B5F9902C0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		80673C802030C3DA0091B48F = {
 			isa = PBXGroup;
 			children = (
+				80673C8C2030C3DA0091B48F /* AppDelegate.swift */,
+				80673C902030C3DA0091B48F /* Main.storyboard */,
 				80673C8B2030C3DA0091B48F /* ReduxMovieDB */,
 				80673CA02030C3DA0091B48F /* ReduxMovieDBTests */,
 				80673C8A2030C3DA0091B48F /* Products */,
-				7DB426F8A988491B5F9902C0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,8 +136,6 @@
 				80673CBB203125620091B48F /* Controllers */,
 				80673CBC20313E8E0091B48F /* Extensions */,
 				80673CC7203238FC0091B48F /* Thunks.swift */,
-				80673C8C2030C3DA0091B48F /* AppDelegate.swift */,
-				80673C902030C3DA0091B48F /* Main.storyboard */,
 				80673C932030C3DA0091B48F /* Assets.xcassets */,
 				80673C952030C3DA0091B48F /* LaunchScreen.storyboard */,
 				80673C982030C3DA0091B48F /* Info.plist */,

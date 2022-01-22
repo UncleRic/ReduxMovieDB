@@ -11,17 +11,16 @@ import UIKit
 import ReSwift
 
 class MovieDetailViewController: UITableViewController {
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var titleValue: UILabel!
-    @IBOutlet weak var releaseDateLabel: UILabel!
-    @IBOutlet weak var releaseDateValue: UILabel!
-    @IBOutlet weak var genreLabel: UILabel!
-    @IBOutlet weak var genreValue: UILabel!
-    @IBOutlet weak var overviewLabel: UILabel!
-    @IBOutlet weak var overviewValue: UILabel!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var titleValue: UILabel!
+    @IBOutlet var releaseDateLabel: UILabel!
+    @IBOutlet var releaseDateValue: UILabel!
+    @IBOutlet var genreLabel: UILabel!
+    @IBOutlet var genreValue: UILabel!
+    @IBOutlet var overviewLabel: UILabel!
+    @IBOutlet var overviewValue: UILabel!
 
-    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet var posterImageView: UIImageView!
 
     private let posterViewHeight: CGFloat = 300
     private var posterView: UIView!
@@ -63,7 +62,7 @@ class MovieDetailViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let defaultHeight = super.tableView(tableView, heightForRowAt: indexPath)
 
-        if indexPath.section == 1 && indexPath.row == 2 {
+        if indexPath.section == 1, indexPath.row == 2 {
             return overviewLabel.sizeThatFits(
                 CGSize(
                     width: overviewLabel.frame.size.width,
@@ -96,7 +95,7 @@ class MovieDetailViewController: UITableViewController {
 
         posterView.frame = posterRect
     }
-    
+
     func localize() {
         titleLabel.text = NSLocalizedString("TITLE", comment: "Film title")
         releaseDateLabel.text = NSLocalizedString("RELEASE_DATE", comment: "Film release date")

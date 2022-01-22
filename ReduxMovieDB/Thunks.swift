@@ -6,12 +6,12 @@
 //  Copyright © 2018 Matheus Cardoso. All rights reserved.
 //
 
+import Foundation
 import ReSwift
 import ReSwiftThunk
 import UIKit
-import Foundation
 
-let fetchMovieGenres = Thunk<MainState> { dispatch, getState in
+let fetchMovieGenres = Thunk<MainState> { dispatch, _ in
     TMDB().fetchMovieGenres { result in
         guard let result = result else { return }
 
@@ -23,7 +23,7 @@ let fetchMovieGenres = Thunk<MainState> { dispatch, getState in
     }
 }
 
-fileprivate let fetchNextUpcomingMoviesPage = Thunk<MainState> { dispatch, getState in
+private let fetchNextUpcomingMoviesPage = Thunk<MainState> { dispatch, getState in
     guard
         let state = getState(),
         !state.moviePages.isComplete
@@ -47,7 +47,7 @@ fileprivate let fetchNextUpcomingMoviesPage = Thunk<MainState> { dispatch, getSt
     }
 }
 
-fileprivate let fetchSearchMoviesPage = Thunk<MainState> { dispatch, getState in
+private let fetchSearchMoviesPage = Thunk<MainState> { dispatch, getState in
     guard
         let state = getState(),
         !state.moviePages.isComplete,

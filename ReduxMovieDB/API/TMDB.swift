@@ -29,7 +29,7 @@ protocol TMDBFetcher {
 }
 
 class TMDB: TMDBFetcher {
-    let apiKey = "e3a484a500c35f963f3167bb1d1a3ebf"   // Ric's Key
+    let apiKey = "e3a484a500c35f963f3167bb1d1a3ebf" // Ric's Key
     let baseUrl = "https://api.themoviedb.org/3"
     let locale = "en-US"
 

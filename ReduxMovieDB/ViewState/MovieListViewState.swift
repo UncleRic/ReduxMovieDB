@@ -24,11 +24,10 @@ struct MovieListViewState: Equatable {
             searchBarText = ""
             searchBarShowsCancel = true
             searchBarFirstResponder = true
-        case .searching(let text):
+        case let .searching(text):
             searchBarText = text
             searchBarShowsCancel = true
             searchBarFirstResponder = true
-
         }
     }
 }
