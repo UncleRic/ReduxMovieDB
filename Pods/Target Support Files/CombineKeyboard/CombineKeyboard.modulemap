@@ -1,6 +1,0 @@
-framework module CombineKeyboard {
-  umbrella header "CombineKeyboard-umbrella.h"
-
-  export *
-  module * { export * }
-}

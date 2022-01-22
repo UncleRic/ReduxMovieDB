@@ -10,13 +10,14 @@ import Combine
 import CombineCocoa
 import CombineKeyboard
 import ReSwift
+import UIKit
 
 class MovieListViewController: UIViewController {
     var movies: [Movie] = []
 
     var cancellables = Cancellables()
 
-    @IBOutlet weak var moviesTableView: UITableView! {
+    @IBOutlet var moviesTableView: UITableView! {
         didSet {
             moviesTableView.backgroundView = UIView()
             moviesTableView.backgroundView?.backgroundColor = moviesTableView.backgroundColor
@@ -35,7 +36,7 @@ class MovieListViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var searchBar: UISearchBar! {
+    @IBOutlet var searchBar: UISearchBar! {
         didSet {
             searchBar.textDidChangePublisher
                 .filter { !$0.isEmpty && mainStore.state.canDispatchSearchActions }
@@ -61,23 +62,23 @@ class MovieListViewController: UIViewController {
                 .store(in: &cancellables)
         }
     }
-    
+
     var isInSplitViewPresentation: Bool {
-        return !(splitViewController?.isCollapsed ?? true)
+        !(splitViewController?.isCollapsed ?? true)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
         title = NSLocalizedString("FILMS", comment: "Films view controller title")
-        
+
         CombineKeyboard.shared.height
             .sink { height in
                 self.additionalSafeAreaInsets.bottom = height
             }
             .store(in: &cancellables)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         mainStore.subscribe(self, transform: {
@@ -89,7 +90,7 @@ class MovieListViewController: UIViewController {
         super.viewWillDisappear(animated)
         mainStore.unsubscribe(self)
     }
-    
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: nil) { _ in
             self.moviesTableView.visibleCells.forEach {
@@ -126,9 +127,9 @@ extension MovieListViewController: StoreSubscriber {
 // MARK: UITableViewDataSource
 
 class MovieListTableViewCell: UITableViewCell {
-    @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var subtitle: UILabel!
+    @IBOutlet var icon: UIImageView!
+    @IBOutlet var title: UILabel!
+    @IBOutlet var subtitle: UILabel!
 
     var movie: Movie? {
         didSet {
@@ -149,11 +150,11 @@ extension MovieListTableViewCell {
 
 extension MovieListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        1
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        movies.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -170,6 +171,4 @@ extension MovieListViewController: UITableViewDataSource {
     }
 }
 
-extension MovieListViewController: UISearchBarDelegate {
-    
-}
+extension MovieListViewController: UISearchBarDelegate {}

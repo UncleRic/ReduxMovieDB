@@ -8,6 +8,8 @@
 
 import ReSwift
 import ReSwiftThunk
+import UIKit
+import Foundation
 
 let fetchMovieGenres = Thunk<MainState> { dispatch, getState in
     TMDB().fetchMovieGenres { result in

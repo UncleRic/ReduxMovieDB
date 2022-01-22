@@ -6,11 +6,12 @@
 //  Copyright © 2018 Matheus Cardoso. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Nuke
+import UIKit
 
 extension UIImageView {
-    fileprivate var activityIndicator: UIActivityIndicatorView {
+    private var activityIndicator: UIActivityIndicatorView {
         if let activityIndicator = subviews.compactMap({ $0 as? UIActivityIndicatorView }).first {
             return activityIndicator
         }
@@ -47,25 +48,26 @@ extension UIImageView {
         return activityIndicator
     }
 
-    fileprivate func startLoading() {
+    private func startLoading() {
         activityIndicator.startAnimating()
     }
 
-    fileprivate func stopLoading() {
+    private func stopLoading() {
         activityIndicator.stopAnimating()
     }
 
-    fileprivate var imageBaseUrl: String {
-        return "https://image.tmdb.org/t/p/w500"
+    private var imageBaseUrl: String {
+        "https://image.tmdb.org/t/p/w500"
     }
 
     func setPosterForMovie(_ movie: Movie) {
         let placeholder = UIImage(named: "poster_placeholder")
 
         guard let posterPath = movie.posterPath,
-            let imageURL = URL(string: "\(imageBaseUrl)\(posterPath)") else {
-                image = placeholder
-                return
+              let imageURL = URL(string: "\(imageBaseUrl)\(posterPath)")
+        else {
+            image = placeholder
+            return
         }
 
         startLoading()
@@ -79,7 +81,7 @@ extension UIImageView {
             with: imageURL,
             options: options,
             into: self
-        ) { [weak self] (_, _) in
+        ) { [weak self] _, _, _ in
             self?.stopLoading()
         }
     }
