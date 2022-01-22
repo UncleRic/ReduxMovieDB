@@ -70,7 +70,7 @@ class MovieListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
-        title = NSLocalizedString("FILMS", comment: "Films view controller title")
+        title = "FILMS"
 
         CombineKeyboard.shared.height
             .sink { height in

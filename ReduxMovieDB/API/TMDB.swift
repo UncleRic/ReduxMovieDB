@@ -29,9 +29,9 @@ protocol TMDBFetcher {
 }
 
 class TMDB: TMDBFetcher {
-    let apiKey = "1f54bd990f1cdfb230adb312546d765d"
+    let apiKey = "e3a484a500c35f963f3167bb1d1a3ebf"   // Ric's Key
     let baseUrl = "https://api.themoviedb.org/3"
-    let locale = Locale.preferredLanguages.first ?? "en-US"
+    let locale = "en-US"
 
     func fetchUpcomingMovies(page: Int, completion: @escaping (TMDBPagedResult<Movie>?) -> Void) {
         fetch(
