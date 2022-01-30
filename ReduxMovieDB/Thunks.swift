@@ -11,18 +11,7 @@ import ReSwift
 import ReSwiftThunk
 import UIKit
 
-let fetchMovieGenres = Thunk<MainState> { dispatch, _ in
-    TMDB().fetchMovieGenres { result in
-        guard let result = result else { return }
-
-        DispatchQueue.main.async {
-            dispatch(
-                MainStateAction.addGenres(result.genres)
-            )
-        }
-    }
-}
-
+// ----------------------------------------------------------------------------------------------
 private let fetchNextUpcomingMoviesPage = Thunk<MainState> { dispatch, getState in
     guard
         let state = getState(),
@@ -47,6 +36,7 @@ private let fetchNextUpcomingMoviesPage = Thunk<MainState> { dispatch, getState 
     }
 }
 
+// ----------------------------------------------------------------------------------------------
 private let fetchSearchMoviesPage = Thunk<MainState> { dispatch, getState in
     guard
         let state = getState(),
@@ -73,6 +63,8 @@ private let fetchSearchMoviesPage = Thunk<MainState> { dispatch, getState in
     }
 }
 
+// ==============================================================================================
+
 let fetchMoviesPage = Thunk<MainState> { dispatch, getState in
     guard let state = getState() else { return }
 
@@ -80,5 +72,18 @@ let fetchMoviesPage = Thunk<MainState> { dispatch, getState in
         dispatch(fetchSearchMoviesPage)
     } else {
         dispatch(fetchNextUpcomingMoviesPage)
+    }
+}
+
+// ----------------------------------------------------------------------------------------------
+let fetchMovieGenres = Thunk<MainState> { dispatch, _ in
+    TMDB().fetchMovieGenres { result in
+        guard let result = result else { return }
+
+        DispatchQueue.main.async {
+            dispatch(
+                MainStateAction.addGenres(result.genres)
+            )
+        }
     }
 }

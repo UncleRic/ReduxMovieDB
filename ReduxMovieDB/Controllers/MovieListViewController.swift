@@ -22,13 +22,13 @@ class MovieListViewController: UIViewController {
             moviesTableView.backgroundView = UIView()
             moviesTableView.backgroundView?.backgroundColor = moviesTableView.backgroundColor
 
-            moviesTableView.didSelectRowPublisher
+            moviesTableView.didSelectRowPublisher        //  ...CombineCocoa
                 .map { self.movies[$0.row] }
                 .map(MainStateAction.showMovieDetail)
                 .sink { mainStore.dispatch($0) }
                 .store(in: &cancellables)
 
-            moviesTableView.willDisplayCellPublisher
+            moviesTableView.willDisplayCellPublisher    //  ...CombineCocoa
                 .filter { $1.row == mainStore.state.movies.count - 1 }
                 .map { _ in fetchMoviesPage }
                 .sink { mainStore.dispatch($0) }
@@ -38,7 +38,7 @@ class MovieListViewController: UIViewController {
 
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
-            searchBar.textDidChangePublisher
+            searchBar.textDidChangePublisher             //  ...CombineCocoa
                 .filter { !$0.isEmpty && mainStore.state.canDispatchSearchActions }
                 .sink {
                     mainStore.dispatch(MainStateAction.search($0))
@@ -46,7 +46,7 @@ class MovieListViewController: UIViewController {
                 }
                 .store(in: &cancellables)
 
-            searchBar.textDidChangePublisher
+            searchBar.textDidChangePublisher             //  ...CombineCocoa
                 .filter { $0.isEmpty && mainStore.state.canDispatchSearchActions }
                 .sink { _ in
                     mainStore.dispatch(MainStateAction.readySearch)
@@ -54,7 +54,7 @@ class MovieListViewController: UIViewController {
                 }
                 .store(in: &cancellables)
 
-            searchBar.cancelButtonClickedPublisher
+            searchBar.cancelButtonClickedPublisher       //  ...CombineCocoa
                 .sink {
                     mainStore.dispatch(MainStateAction.cancelSearch)
                     mainStore.dispatch(fetchMoviesPage)
@@ -67,6 +67,9 @@ class MovieListViewController: UIViewController {
         !(splitViewController?.isCollapsed ?? true)
     }
 
+    // ----------------------------------------------------------------------------------------------
+    // MARK: - UIViewController functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
@@ -81,14 +84,14 @@ class MovieListViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        mainStore.subscribe(self, transform: {
+        mainStore.subscribe(self, transform: {       // ...RxSwift.
             $0.select(MovieListViewState.init)
         })
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        mainStore.unsubscribe(self)
+        mainStore.unsubscribe(self)                 // ...RxSwift
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -102,6 +105,9 @@ class MovieListViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
     }
 }
+
+// ==============================================================================================
+// MARK: -
 
 // MARK: StoreSubscriber
 
@@ -124,7 +130,9 @@ extension MovieListViewController: StoreSubscriber {
     }
 }
 
-// MARK: UITableViewDataSource
+// ==============================================================================================
+
+// MARK: - UITableViewDataSource
 
 class MovieListTableViewCell: UITableViewCell {
     @IBOutlet var icon: UIImageView!
@@ -142,11 +150,17 @@ class MovieListTableViewCell: UITableViewCell {
     }
 }
 
+// ==============================================================================================
+// MARK: -
+
 extension MovieListTableViewCell {
     func setDisclosureIndicator(visible: Bool) {
         accessoryType = visible ? .disclosureIndicator : .none
     }
 }
+
+// ==============================================================================================
+// MARK: -
 
 extension MovieListViewController: UITableViewDataSource {
     func numberOfSections(in _: UITableView) -> Int {

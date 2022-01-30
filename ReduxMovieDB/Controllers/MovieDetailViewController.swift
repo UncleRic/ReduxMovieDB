@@ -104,6 +104,8 @@ class MovieDetailViewController: UITableViewController {
     }
 }
 
+// ==============================================================================================
+
 // MARK: StoreSubscriber
 
 extension MovieDetailViewController: StoreSubscriber {

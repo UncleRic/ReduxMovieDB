@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186E4C0E27A7141E00D8928B /* ReduxMovieSchematic.graffle in Resources */ = {isa = PBXBuildFile; fileRef = 186E4C0D27A7141E00D8928B /* ReduxMovieSchematic.graffle */; };
 		18CFB96C279C9917008DA6D5 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 18CFB96B279C9917008DA6D5 /* CombineCocoa */; };
 		18CFB96F279C9AF5008DA6D5 /* CombineKeyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 18CFB96E279C9AF5008DA6D5 /* CombineKeyboard */; };
 		18CFB972279C9BD6008DA6D5 /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18CFB971279C9BD6008DA6D5 /* ReSwift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186E4C0D27A7141E00D8928B /* ReduxMovieSchematic.graffle */ = {isa = PBXFileReference; lastKnownFileType = file; path = ReduxMovieSchematic.graffle; sourceTree = "<group>"; };
 		1B32A3FD2723373200D2DA53 /* Combine+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Combine+Extensions.swift"; sourceTree = "<group>"; };
 		800E401E217FA5E300C2A3BD /* Movie+Differentiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Differentiable.swift"; sourceTree = "<group>"; };
 		802CD6A121D6A8D2000FF852 /* MovieDetailViewStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewStateTests.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		80673C802030C3DA0091B48F = {
 			isa = PBXGroup;
 			children = (
+				186E4C0D27A7141E00D8928B /* ReduxMovieSchematic.graffle */,
 				80673C8C2030C3DA0091B48F /* AppDelegate.swift */,
 				80673C902030C3DA0091B48F /* Main.storyboard */,
 				80673C8B2030C3DA0091B48F /* ReduxMovieDB */,
@@ -128,12 +131,12 @@
 		80673C8B2030C3DA0091B48F /* ReduxMovieDB */ = {
 			isa = PBXGroup;
 			children = (
+				80673CBB203125620091B48F /* Controllers */,
 				8076FB14208B6CBF00513FAC /* API */,
 				80673CBA2031253F0091B48F /* Model */,
 				8076FB11208B6BE200513FAC /* Actions */,
 				8076FB10208B6B9200513FAC /* State */,
 				8076FB0F208B6B7000513FAC /* ViewState */,
-				80673CBB203125620091B48F /* Controllers */,
 				80673CBC20313E8E0091B48F /* Extensions */,
 				80673CC7203238FC0091B48F /* Thunks.swift */,
 				80673C932030C3DA0091B48F /* Assets.xcassets */,
@@ -338,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80673C972030C3DA0091B48F /* LaunchScreen.storyboard in Resources */,
+				186E4C0E27A7141E00D8928B /* ReduxMovieSchematic.graffle in Resources */,
 				94CDE0A723438A6A00545FF1 /* Localizable.strings in Resources */,
 				80673C942030C3DA0091B48F /* Assets.xcassets in Resources */,
 				80673C922030C3DA0091B48F /* Main.storyboard in Resources */,

@@ -39,6 +39,8 @@ class SplitViewController: UISplitViewController {
     }
 }
 
+// ==============================================================================================
+
 // MARK: StoreSubscriber
 
 extension SplitViewController: StoreSubscriber {
