@@ -9,13 +9,13 @@
 import ReSwift
 import ReSwiftThunk
 
-enum SearchState: Equatable {
+enum SearchStateEnum: Equatable {
     case canceled
     case ready
     case searching(String)
 }
 
-enum MovieDetailState: Equatable {
+enum MovieDetailStateEnum: Equatable {
     case willHide(Movie)
     case hide
     case show(Movie)
@@ -32,7 +32,7 @@ enum MovieDetailState: Equatable {
     }
 }
 
-enum SplitDetailState: Equatable {
+enum SplitDetailStateEnum: Equatable {
     case collapsed
     case separated
 }
@@ -42,10 +42,10 @@ struct MainState: Equatable {
     var genres: [Genre] = []
     var moviePages: Pages<Movie> = .init()
 
-    var movieDetail: MovieDetailState = .hide
-    var splitDetail: SplitDetailState = .separated
+    var movieDetail: MovieDetailStateEnum = .hide
+    var splitDetail: SplitDetailStateEnum = .separated
 
-    var search: SearchState = .canceled
+    var search: SearchStateEnum = .canceled
 
     var movies: [Movie] {
         moviePages.values
@@ -62,6 +62,7 @@ struct MainState: Equatable {
     }
 }
 
+// ----------------------------------------------------------------------------------------------
 func mainReducer(action: Action, state: MainState?) -> MainState {
     var state = state ?? MainState()
 

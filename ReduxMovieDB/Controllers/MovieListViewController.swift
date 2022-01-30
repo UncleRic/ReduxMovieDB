@@ -171,6 +171,7 @@ extension MovieListViewController: UITableViewDataSource {
         movies.count
     }
 
+    // *** CELL FOR ROW ***
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieListTableViewCell") as? MovieListTableViewCell else {
             return UITableViewCell()
