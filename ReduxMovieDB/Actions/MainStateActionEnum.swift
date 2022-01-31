@@ -1,5 +1,5 @@
 //
-//  MainStateAction.swift
+//  MainStateActionEnum.swift
 //  ReduxMovieDB
 //
 //  Created by Matheus Cardoso on 4/21/18.
