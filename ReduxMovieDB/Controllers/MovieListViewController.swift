@@ -22,13 +22,13 @@ class MovieListViewController: UIViewController {
             moviesTableView.backgroundView = UIView()
             moviesTableView.backgroundView?.backgroundColor = moviesTableView.backgroundColor
 
-            moviesTableView.didSelectRowPublisher        //  ...CombineCocoa
+            moviesTableView.didSelectRowPublisher //  ...CombineCocoa
                 .map { self.movies[$0.row] }
                 .map(MainStateAction.showMovieDetail)
                 .sink { mainStore.dispatch($0) }
                 .store(in: &cancellables)
 
-            moviesTableView.willDisplayCellPublisher    //  ...CombineCocoa
+            moviesTableView.willDisplayCellPublisher //  ...CombineCocoa
                 .filter { $1.row == mainStore.state.movies.count - 1 }
                 .map { _ in fetchMoviesPage }
                 .sink { mainStore.dispatch($0) }
@@ -38,7 +38,7 @@ class MovieListViewController: UIViewController {
 
     @IBOutlet var searchBar: UISearchBar! {
         didSet {
-            searchBar.textDidChangePublisher             //  ...CombineCocoa
+            searchBar.textDidChangePublisher //  ...CombineCocoa
                 .filter { !$0.isEmpty && mainStore.state.canDispatchSearchActions }
                 .sink {
                     mainStore.dispatch(MainStateAction.search($0))
@@ -46,7 +46,7 @@ class MovieListViewController: UIViewController {
                 }
                 .store(in: &cancellables)
 
-            searchBar.textDidChangePublisher             //  ...CombineCocoa
+            searchBar.textDidChangePublisher //  ...CombineCocoa
                 .filter { $0.isEmpty && mainStore.state.canDispatchSearchActions }
                 .sink { _ in
                     mainStore.dispatch(MainStateAction.readySearch)
@@ -54,7 +54,7 @@ class MovieListViewController: UIViewController {
                 }
                 .store(in: &cancellables)
 
-            searchBar.cancelButtonClickedPublisher       //  ...CombineCocoa
+            searchBar.cancelButtonClickedPublisher //  ...CombineCocoa
                 .sink {
                     mainStore.dispatch(MainStateAction.cancelSearch)
                     mainStore.dispatch(fetchMoviesPage)
@@ -68,8 +68,9 @@ class MovieListViewController: UIViewController {
     }
 
     // ----------------------------------------------------------------------------------------------
+
     // MARK: - UIViewController functions
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         overrideUserInterfaceStyle = .dark
@@ -84,14 +85,14 @@ class MovieListViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        mainStore.subscribe(self, transform: {       // ...RxSwift.
+        mainStore.subscribe(self, transform: { // ...RxSwift.
             $0.select(MovieListViewState.init)
         })
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        mainStore.unsubscribe(self)                 // ...RxSwift
+        mainStore.unsubscribe(self) // ...RxSwift
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -107,6 +108,7 @@ class MovieListViewController: UIViewController {
 }
 
 // ==============================================================================================
+
 // MARK: -
 
 // MARK: StoreSubscriber
@@ -151,6 +153,7 @@ class MovieListTableViewCell: UITableViewCell {
 }
 
 // ==============================================================================================
+
 // MARK: -
 
 extension MovieListTableViewCell {
@@ -160,6 +163,7 @@ extension MovieListTableViewCell {
 }
 
 // ==============================================================================================
+
 // MARK: -
 
 extension MovieListViewController: UITableViewDataSource {
